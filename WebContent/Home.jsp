@@ -9,6 +9,8 @@
 		<title>Crypto Exchange | Home</title>
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 		<link href="./css/home.css" rel="stylesheet" type="text/css">
+		<link rel="icon" type="image/png" href="./imagens/logo-pim.png">
+		
 	</head>
 	<body>
 		<%
@@ -91,7 +93,7 @@
 			  	</div>
 			    
 			  </div>
-
+			<%@ include file="rodape.html" %>
 		</div>
 	</body>
 </html>

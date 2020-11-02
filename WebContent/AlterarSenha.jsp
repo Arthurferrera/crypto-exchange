@@ -20,6 +20,7 @@
 		<meta charset="UTF-8">
 		<title>Alterar Senha</title>
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+		<link rel="icon" type="image/png" href="./imagens/logo-pim.png">
 	</head>
 	<body>
 		<div class="container" style="box-shadow: 3px 3px 5px 5px gray; border-radius:6px; border:3px inset;">		
