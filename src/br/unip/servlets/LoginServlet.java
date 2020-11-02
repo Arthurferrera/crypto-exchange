@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 
 import br.unip.dao.UsuarioDAO;
 import br.unip.models.Usuario;
-//import br.senai.sp.servlets.HttpSession;
 
 /**
  * Servlet implementation class LoginServlet

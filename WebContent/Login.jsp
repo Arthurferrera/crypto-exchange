@@ -13,9 +13,6 @@
 	<body>
     	<div class="titulo-page">
     		<img class="logo-login" alt="logo" width="65" height="65" src="imagens/logo-pim.png">
-				<!-- <span style="margin-left: 20px">
-					<strong>Crypto Exchange</strong>
-				</span> -->
     		Crypto Exchange
     	</div>
 		<div class="container">
@@ -39,6 +36,9 @@
 				            <input class="btn-login" type="submit" value="Logar" /> 
 				         </p>
 			        </form>
+			        <% 
+			        	
+			        %>
      			</div>
 	   	  	</div>
 	  	</div> 

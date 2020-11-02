@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.senai.sp.jdbc.ConexaoMySql;
 import br.unip.jdbc.ConnectionFactory;
 import br.unip.models.Usuario;
 
