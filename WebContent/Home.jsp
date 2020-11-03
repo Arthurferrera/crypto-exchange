@@ -37,6 +37,8 @@
 			
 			dados.setAportesMes(nf.format(new BigDecimal(dados.getAportesMes())));
 			dados.setInvestido(nf.format(new BigDecimal(dados.getInvestido())));
+			dados.setCaixa(nf.format(new BigDecimal(dados.getCaixa())));
+			dados.setTotal(nf.format(new BigDecimal(dados.getTotal())));
 			
 			
 		%>
@@ -55,7 +57,7 @@
 					  		</div>
 					  		<div style="width: 70%">
 						    	<h4>Total Carteira</h4>
-						    	<h5>R$ 1.560,09</h5>
+						    	<h5><%= dados.getTotal() %></h5>
 					  		</div>
 					    </div>
 					    <div class="box-dashboard jumbotron col-sm-5 col-md-5 col-lg-5">
@@ -74,7 +76,7 @@
 					    	</div>
 					    	<div style="width: 70%">
 						    	<h4>Caixa</h4>
-						    	<h5>R$ 1.560,09</h5>
+						    	<h5><%= dados.getCaixa() %></h5>
 					    	</div>
 					    </div>
 					    <div class="box-dashboard jumbotron col-sm-5 col-md-5 col-lg-5">

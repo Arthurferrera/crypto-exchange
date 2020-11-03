@@ -14,6 +14,7 @@ public class Usuario {
 	private String cidade;
 	private String estado;
 	private boolean ativo;
+	private int saldo;
 	
 	public boolean isAtivo() {
 		return ativo;
@@ -109,6 +110,14 @@ public class Usuario {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public int getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(int saldo) {
+		this.saldo = saldo;
 	}
 
 }

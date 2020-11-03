@@ -102,6 +102,8 @@ public class UsuarioDAO {
 
 	public DashboardInvestimentos pegarValoresInvestimento(int id) {
 		DashboardInvestimentos dados = new DashboardInvestimentos();
+		Double caixa = 0.00;
+		Double investido = 0.00;
 		
 		String dataSQL = Calendar.getInstance().get(Calendar.MONTH)+"/"+Calendar.getInstance().get(Calendar.YEAR);
 
@@ -111,37 +113,55 @@ public class UsuarioDAO {
 		String sqlInvestido = "SELECT sum(valor_corrente) as somaInvestimento FROM investimentos " 
 				+ "WHERE cliente_id = ? AND FORMAT(data_criacao, 'MM/yyyy') = ?";
 		
+		String sqlSaldo = "SELECT saldo FROM clientes " 
+				+ "WHERE id = ? AND ativo = 1";
+		
 		new ConnectionFactory();
 		Connection con = ConnectionFactory.getConnection();
 //		PreparedStatement stm;
 		try (
 			PreparedStatement stm = con.prepareStatement(sqlEntradas);
 			PreparedStatement stmInvestido = con.prepareStatement(sqlInvestido);
+			PreparedStatement stmSaldo = con.prepareStatement(sqlSaldo);
 		) {
+			// Pegando valores que foram aportados 
 			stm.setInt(1, id);
 			stm.setString(2, dataSQL);
-			
-			stmInvestido.setInt(1, id);
-			stmInvestido.setString(2, dataSQL);
-			
             try (ResultSet rs = stm.executeQuery()) {
-            	
             	while (rs.next()) {
             		if (rs.getString("somaEntradas") == null) {
-            			dados.setAportesMes("0,00");
+            			dados.setAportesMes("R$ 0,00");
             		} else {
             			dados.setAportesMes(rs.getString("somaEntradas"));
             		}
             	}
             }
 			
+			// Pegando valores que estão investidos
+            stmInvestido.setInt(1, id);
+			stmInvestido.setString(2, dataSQL);
             try (ResultSet rs = stmInvestido.executeQuery()) {
             	while (rs.next()) {
             		System.out.println(rs.getString("somaInvestimento"));
     				if (rs.getString("somaInvestimento") == null) {
-    					dados.setInvestido("0,00");
+    					dados.setInvestido("R$ 0,00");
     				} else {
+    					investido =  Double.parseDouble(rs.getString("somaInvestimento"));
     					dados.setInvestido(rs.getString("somaInvestimento"));
+    				}
+    			}
+            }
+            
+			// Pegando valores que disponiveis no caixa(saldo)
+            stmSaldo.setInt(1, id);
+            try (ResultSet rs = stmSaldo.executeQuery()) {
+            	while (rs.next()) {
+            		System.out.println(rs.getString("saldo"));
+    				if (rs.getString("saldo") == null) {
+    					dados.setCaixa("R$ 0,00");
+    				} else {
+    					caixa =  Double.parseDouble(rs.getString("saldo"));
+    					dados.setCaixa(rs.getString("saldo"));
     				}
     			}
             }
@@ -170,6 +190,8 @@ public class UsuarioDAO {
 			throw new RuntimeException(e);
 		}
 		
+		Double soma = caixa + investido;
+		dados.setTotal(soma.toString());
 		return dados;
 		
 		
