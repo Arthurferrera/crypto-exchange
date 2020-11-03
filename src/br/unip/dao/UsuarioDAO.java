@@ -165,27 +165,7 @@ public class UsuarioDAO {
     				}
     			}
             }
-//			ResultSet rs = stm.executeQuery();
-
-			
-			//stm.close();
-			//rs.close();
-			
-//			PreparedStatement stmInvestido;
-//			stmInvestido = con.prepareStatement(sqlInvestido);
-//			stmInvestido.setInt(1, id);
-//			stmInvestido.setString(2, dataSQL);
-////			
-//			ResultSet rsInvestido = stmInvestido.executeQuery();
-////
-//			while (rsInvestido.next()) {
-//				System.out.println(rsInvestido.getString("somaInvestimento"));
-//				if (rsInvestido.getString("somaInvestimento") == null) {
-//					dados.setInvestido("0,00");
-//				} else {
-//					dados.setInvestido(rsInvestido.getString("somaInvestimento"));
-//				}
-//			}
+            
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
