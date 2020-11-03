@@ -1,3 +1,10 @@
+<%@page import="java.math.BigDecimal"%>
+<%@page import="java.text.NumberFormat"%>
+<%@page import="br.unip.models.DashboardInvestimentos"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.sql.Date"%>
+<%@page import="br.unip.dao.UsuarioDAO"%>
 <%@page import="br.unip.models.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -15,10 +22,23 @@
 	<body>
 		<%
 			Usuario usuario = (Usuario) session.getAttribute("usuario");
-		
+			DashboardInvestimentos dados = new DashboardInvestimentos();
+			//dados.setAportesMes("0,00");
+			
+			
 			if(usuario == null) {
 				response.sendRedirect("Login.jsp");
 			}
+			
+			UsuarioDAO usuarioDao = new UsuarioDAO();
+			
+			dados = usuarioDao.pegarValoresInvestimento(usuario.getId());
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			
+			dados.setAportesMes(nf.format(new BigDecimal(dados.getAportesMes())));
+			dados.setInvestido(nf.format(new BigDecimal(dados.getInvestido())));
+			
+			
 		%>
 		<div class="container">
 			<%@include file="cabecalho.html" %>
@@ -44,7 +64,7 @@
 					    	</div>
 				    		<div style="width: 70%">
 						    	<h4>Investido</h4>
-						    	<h5>R$ 1.560,09</h5>
+						    	<h5><%= dados.getInvestido() %></h5>
 				    		</div>
 				    	</div>
 					    <!-- <div class="w-100"></div> -->
@@ -63,7 +83,7 @@
 					    	</div>
 					    	<div style="width: 70%">
 						    	<h4>Aportes no mes</h4>
-						    	<h5>R$ 1.560,09</h5>
+						    	<h5><%= dados.getAportesMes() %></h5>
 					    	</div>
 					    </div>
 					</div>			  	

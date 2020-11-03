@@ -1,11 +1,15 @@
 package br.unip.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import br.unip.jdbc.ConnectionFactory;
+import br.unip.models.DashboardInvestimentos;
 import br.unip.models.Usuario;
 
 
@@ -43,7 +47,6 @@ public class UsuarioDAO {
 			ConnectionFactory.closeConnection();			
 
 		} catch (SQLException e) {
-			System.out.println("estourou no select");
 			throw new RuntimeException(e);
 		}
 		return u;
@@ -95,5 +98,80 @@ public class UsuarioDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public DashboardInvestimentos pegarValoresInvestimento(int id) {
+		DashboardInvestimentos dados = new DashboardInvestimentos();
+		
+		String dataSQL = Calendar.getInstance().get(Calendar.MONTH)+"/"+Calendar.getInstance().get(Calendar.YEAR);
+
+		String sqlEntradas = "SELECT sum(valor) as somaEntradas FROM entradas " 
+				+ "WHERE cliente_id = ? AND FORMAT(data_criacao, 'MM/yyyy') = ?";
+		
+		String sqlInvestido = "SELECT sum(valor_corrente) as somaInvestimento FROM investimentos " 
+				+ "WHERE cliente_id = ? AND FORMAT(data_criacao, 'MM/yyyy') = ?";
+		
+		new ConnectionFactory();
+		Connection con = ConnectionFactory.getConnection();
+//		PreparedStatement stm;
+		try (
+			PreparedStatement stm = con.prepareStatement(sqlEntradas);
+			PreparedStatement stmInvestido = con.prepareStatement(sqlInvestido);
+		) {
+			stm.setInt(1, id);
+			stm.setString(2, dataSQL);
+			
+			stmInvestido.setInt(1, id);
+			stmInvestido.setString(2, dataSQL);
+			
+            try (ResultSet rs = stm.executeQuery()) {
+            	
+            	while (rs.next()) {
+            		if (rs.getString("somaEntradas") == null) {
+            			dados.setAportesMes("0,00");
+            		} else {
+            			dados.setAportesMes(rs.getString("somaEntradas"));
+            		}
+            	}
+            }
+			
+            try (ResultSet rs = stmInvestido.executeQuery()) {
+            	while (rs.next()) {
+            		System.out.println(rs.getString("somaInvestimento"));
+    				if (rs.getString("somaInvestimento") == null) {
+    					dados.setInvestido("0,00");
+    				} else {
+    					dados.setInvestido(rs.getString("somaInvestimento"));
+    				}
+    			}
+            }
+//			ResultSet rs = stm.executeQuery();
+
+			
+			//stm.close();
+			//rs.close();
+			
+//			PreparedStatement stmInvestido;
+//			stmInvestido = con.prepareStatement(sqlInvestido);
+//			stmInvestido.setInt(1, id);
+//			stmInvestido.setString(2, dataSQL);
+////			
+//			ResultSet rsInvestido = stmInvestido.executeQuery();
+////
+//			while (rsInvestido.next()) {
+//				System.out.println(rsInvestido.getString("somaInvestimento"));
+//				if (rsInvestido.getString("somaInvestimento") == null) {
+//					dados.setInvestido("0,00");
+//				} else {
+//					dados.setInvestido(rsInvestido.getString("somaInvestimento"));
+//				}
+//			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		
+		return dados;
+		
+		
 	}
 }
