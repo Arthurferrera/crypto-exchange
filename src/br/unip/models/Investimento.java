@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 public class Investimento {
 	
 	private int id;
+	private String nomeAtivo;
+	private String codigoAtivo;
 	private int cliente_id;
 	private int ativo_id;
 	private int quantidade;
@@ -19,6 +21,20 @@ public class Investimento {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public String getNomeAtivo() {
+		return nomeAtivo;
+	}
+	public void setNomeAtivo(String nomeAtivo) {
+		this.nomeAtivo = nomeAtivo;
+	}
+	public String getCodigoAtivo() {
+		return codigoAtivo;
+	}
+	public void setCodigoAtivo(String codigoAtivo) {
+		this.codigoAtivo = codigoAtivo;
+	}
+	
 	public int getCliente_id() {
 		return cliente_id;
 	}

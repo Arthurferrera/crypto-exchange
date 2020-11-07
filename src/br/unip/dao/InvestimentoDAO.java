@@ -17,8 +17,12 @@ public class InvestimentoDAO {
 		new ConnectionFactory();
 		Connection con = ConnectionFactory.getConnection();
 		
-		String sql = "SELECT *, FORMAT (data_criacao, 'dd/MM/yy') as data_criacao, FORMAT (data_atualizacao, 'dd/MM/yy') as data_atualizacao FROM investimentos "
-				+ "WHERE cliente_id = ?";
+		String sql = "SELECT i.*, i.id as id_investimento, a.name, a.simbolo, a.valor_atual, i.valor_corrente,"
+				+ " FORMAT (i.data_criacao, 'dd/MM/yy') as data_criacao, "
+				+ " FORMAT (i.data_atualizacao, 'dd/MM/yy') as data_atualizacao "
+				+ " FROM investimentos as i"
+				+ " INNER JOIN ativos as a ON a.id = i.ativo_id "
+				+ "WHERE i.cliente_id = ?";
 		
 		try {
 			PreparedStatement stm = con.prepareStatement(sql);
@@ -29,8 +33,10 @@ public class InvestimentoDAO {
 			while(rs.next()){
 				
 				investimento = new Investimento();
+				investimento.setNomeAtivo(rs.getString("name"));
+				investimento.setCodigoAtivo(rs.getString("simbolo"));
 				
-				investimento.setId(rs.getInt("id"));
+				investimento.setId(rs.getInt("id_investimento"));
 				investimento.setCliente_id(rs.getInt("cliente_id"));
 				investimento.setAtivo_id(rs.getInt("ativo_id"));
 				investimento.setQuantidade(rs.getInt("quantidade"));
