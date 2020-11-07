@@ -1,5 +1,24 @@
+<%@page import="br.unip.models.Investimento"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="br.unip.dao.InvestimentoDAO"%>
+<%@page import="br.unip.models.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	Usuario usuario = (Usuario) session.getAttribute("usuario");
+			
+			
+	if(usuario == null) {
+		response.sendRedirect("Login.jsp");
+	} else {
+		
+		ArrayList<Investimento> lista = new ArrayList<>();
+		InvestimentoDAO contatoDao = new InvestimentoDAO();
+		lista = contatoDao.listaInvestimentos(usuario.getId());
+		
+		
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,22 +43,29 @@
 	    <div class="row">
 	    	<div class="col-md-5">
 				<div class="list-group" id="myList" role="tablist">
-				  <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
-				  <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
-				  <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
-				  <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
+					<%
+						for(Investimento i : lista){
+							out.print("<a class='list-group-item list-group-item-action' data-toggle='list' href='#investimento"+i.getId()+"' role='tab'>");
+							out.print(i.getAtivo_id());
+							out.print("</a>");
+						}
+					%>
 				</div>
 	    	</div>
 
 			<div class="col-md-5">
 				<div class="tab-content">
-	  				<div class="tab-pane active" id="home" role="tabpanel">.a.</div>
-	  				<div class="tab-pane" id="profile" role="tabpanel">.s.</div>
-	  				<div class="tab-pane" id="messages" role="tabpanel">v..</div>
-	  				<div class="tab-pane" id="settings" role="tabpanel">.g.</div>
+					<%
+						for(Investimento i : lista) {
+							out.print("<div class='tab-pane' id='investimento"+i.getId()+"' role='tabpanel'>");
+							out.print(i.getValor_corrente());
+							out.print("</div>");
+						}
+					%>
 				</div>
 			</div>
 		</div>
     </div>
 </body>
+<% } %>
 </html>

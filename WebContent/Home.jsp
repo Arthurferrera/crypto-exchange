@@ -28,17 +28,17 @@
 			
 			if(usuario == null) {
 				response.sendRedirect("Login.jsp");
-			}
+			} else {
 			
-			UsuarioDAO usuarioDao = new UsuarioDAO();
-			
-			dados = usuarioDao.pegarValoresInvestimento(usuario.getId());
-			NumberFormat nf = NumberFormat.getCurrencyInstance();
-			
-			dados.setAportesMes(nf.format(new BigDecimal(dados.getAportesMes())));
-			dados.setInvestido(nf.format(new BigDecimal(dados.getInvestido())));
-			dados.setCaixa(nf.format(new BigDecimal(dados.getCaixa())));
-			dados.setTotal(nf.format(new BigDecimal(dados.getTotal())));
+				UsuarioDAO usuarioDao = new UsuarioDAO();
+				
+				dados = usuarioDao.pegarValoresInvestimento(usuario.getId());
+				NumberFormat nf = NumberFormat.getCurrencyInstance();
+				
+				dados.setAportesMes(nf.format(new BigDecimal(dados.getAportesMes())));
+				dados.setInvestido(nf.format(new BigDecimal(dados.getInvestido())));
+				dados.setCaixa(nf.format(new BigDecimal(dados.getCaixa())));
+				dados.setTotal(nf.format(new BigDecimal(dados.getTotal())));
 			
 			
 		%>
@@ -123,4 +123,5 @@
 			<%@ include file="rodape.html" %>
 		</div>
 	</body>
+	<% } %>
 </html>

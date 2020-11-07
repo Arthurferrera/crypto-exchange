@@ -11,7 +11,6 @@
 	} else {		
 		u = (Usuario)session.getAttribute("usuario");
 		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-	}
 %>
     
 <!DOCTYPE html>
@@ -61,4 +60,5 @@
 			
 		</div>	
 	</body>
+	<% } %>
 </html>

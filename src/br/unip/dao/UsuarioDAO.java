@@ -44,7 +44,7 @@ public class UsuarioDAO {
 
 			rs.close();
 			stm.close();
-			ConnectionFactory.closeConnection();			
+			ConnectionFactory.closeConnection();
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -142,7 +142,6 @@ public class UsuarioDAO {
 			stmInvestido.setString(2, dataSQL);
             try (ResultSet rs = stmInvestido.executeQuery()) {
             	while (rs.next()) {
-            		System.out.println(rs.getString("somaInvestimento"));
     				if (rs.getString("somaInvestimento") == null) {
     					dados.setInvestido("R$ 0,00");
     				} else {
@@ -156,7 +155,6 @@ public class UsuarioDAO {
             stmSaldo.setInt(1, id);
             try (ResultSet rs = stmSaldo.executeQuery()) {
             	while (rs.next()) {
-            		System.out.println(rs.getString("saldo"));
     				if (rs.getString("saldo") == null) {
     					dados.setCaixa("R$ 0,00");
     				} else {
