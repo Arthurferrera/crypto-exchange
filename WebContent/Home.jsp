@@ -44,11 +44,9 @@
 		%>
 		<div class="container">
 			<%@include file="cabecalho.html" %>
-			
-			<!-- TODO: PEGAR DADOS DE VALORES DE INVESTIMENTO DO BANCO DE DADOS -->
-			
-			
-			  <div class="row">
+				
+		
+			<div class="row" style="width: 100%">
 			  	<div class="col-md-8">
 					<div class="row">
 					  	<div class="box-dashboard box-margin-left jumbotron col-sm-5 col-md-5 col-lg-5">
@@ -113,8 +111,15 @@
 			  			</div>
 			  		</div>
 			  	</div>
-			    
-			  </div>
+    
+			</div>
+			
+		 	<div class="row" style="width: 100%">
+	 			<div class="col-md-6 jumbotron">
+	 				<a class="link-bold" href="MeusInvestimentos.jsp">Meus Investimentos</a>
+	 			</div>
+			</div>
+			
 			<%@ include file="rodape.html" %>
 		</div>
 	</body>
