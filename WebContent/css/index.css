@@ -1,0 +1,47 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #f9f9f9;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+footer {
+	margin-top: auto;
+	min-height: 50px;
+}
+
+main {
+	margin-left: 1rem;
+}
+
+.card-user {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1rem;
+	border-bottom: 1px solid #ececec;
+}
+
+.tabs .tab a {
+	color: #007e92;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+	color: #006c7c;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+	background-color: #b2c4f633;
+}
+
+.tabs .indicator {
+	background-color: #006c7c;
+}
+
+.footer-content {
+	display: flex;
+	flex-direction: column;
+	line-height: 0.1;
+	align-items: center;
+}

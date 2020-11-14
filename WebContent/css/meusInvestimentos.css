@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.navbar-investimentos {
+    background-color: #e3f2fd;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+}
+
+.navbar-investimentos  a {
+	font-size: 25px;
+}
