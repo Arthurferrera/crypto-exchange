@@ -9,12 +9,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <ul id="slide-out" class="sidenav sidenav-fixed">
-	<div class="card-user">
-		<img alt="Aportes" src="./imagens/perfil.png" width="40" height="40">
-		<h6><%= usuario.getNome() +" "+ usuario.getSobrenome() %></h6>
-		<p><%= usuario.getEmail() %></p>
-		<a class="link-perfil" href="EditarDados.jsp">Editar dados</a>
-	</div>
+	<li>
+		<div class="card-user">
+			<img alt="Aportes" src="./imagens/perfil.png" width="40" height="40">
+			<h6><%= usuario.getNome() +" "+ usuario.getSobrenome() %></h6>
+			<p><%= usuario.getEmail() %></p>
+			<a class="link-perfil" href="EditarDados.jsp">Editar dados</a>
+		</div>
+	</li>
 	<li><a href="Home.jsp">Home</a></li>
 </ul>
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
