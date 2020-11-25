@@ -18,5 +18,6 @@
 		</div>
 	</li>
 	<li><a href="Home.jsp">Home</a></li>
+	<li><a href="MeusInvestimentos.jsp">Meus Investimentos</a></li>
 </ul>
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>

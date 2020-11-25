@@ -16,7 +16,11 @@
 }
 .titulo-page{
 	text-align: center;
-	font-size: 21px;
+	
+	font-size: 25px;
+    font-weight: bold;
+    padding: 21px;
+
 }
 .btn-login{
 	width:100%

@@ -89,7 +89,7 @@
 			<div class="my-exchanges">
 				<div class="row">
 					<div class="col s12">
-						<ul class="tabs">
+						<ul>
 							<%
 									for(Investimento i : lista){
 										out.print("<li class='tab col s3'><a href='#investimento"+i.getId()+"'>");

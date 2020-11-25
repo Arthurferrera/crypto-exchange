@@ -22,25 +22,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+	<!-- <meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="./css/meusInvestimentos.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<title>Meus Investimentos</title>
-	</head>
+	
+	<title>Crypto Exchange | Meus Investimentos</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="./css/materialize.css" rel="stylesheet" type="text/css">
+	<link href="./css/index.css" rel="stylesheet" type="text/css">
+	<link rel="icon" type="image/png" href="./imagens/logo-pim.png"> -->
+	<link rel="stylesheet" type="text/css" href="./css/meusInvestimentos.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="./css/materialize.css" rel="stylesheet" type="text/css">
+	<!-- <link href="./css/home.css" rel="stylesheet" type="text/css"> -->
+	<link href="./css/index.css" rel="stylesheet" type="text/css">
+	<link rel="icon" type="image/png" href="./imagens/logo-pim.png">
+	
+</head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-investimentos">
+	<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-investimentos">
 	  <div class="container">
 	  	<img alt="logo" width="65" height="65" src="imagens/logo-pim.png">
 	    <a class="navbar-brand" style="float: none; margin-left: 20px;" href="#">Meus Investimentos</a>
 	  </div>
-	</nav>
+	</nav> -->
+	<%@include file="sidenav.jsp" %>
 	
-    <div class="container">
+    <%-- <div class="container">
 	    <div class="row">
 	    	<div class="col-md-4">
 				<div class="list-group" id="myList" role="tablist">
@@ -66,7 +82,66 @@
 				</div>
 			</div>
 		</div>
-    </div>
+    </div> --%>
+    
+    <main>
+		<%-- <div class="content">
+			<div class="row shadow-row">
+				<div class="col s12 m3">
+					<div class="box-dashboard">
+						<h6>Total da Carteira</h6>
+						<h5><%= dados.getTotal() %></h5>
+					</div>
+				</div>
+				<div class="col s12 m3">
+					<div class="box-dashboard">
+						<h6>Investido</h6>
+						<h5><%= dados.getInvestido() %></h5>
+					</div>
+				</div>
+				<div class="col s12 m3">
+					<div class="box-dashboard">
+						<h6>Caixa</h6>
+						<h5><%= dados.getCaixa() %></h5>
+					</div>
+				</div>
+				<div class="col s12 m3">
+					<div class="box-dashboard">
+						<h6>Aportes no mês</h6>
+						<h5><%= dados.getAportesMes() %></h5>
+					</div>
+				</div>
+			</div>
+		</div> --%>
+		<div class="content-exchanges">
+			<h4>Meus investimentos</h4>
+			<div class="my-exchanges">
+				<div class="row">
+					<div class="col s12">
+						<ul>
+							<%
+									for(Investimento i : lista){
+										out.print("<li class='tab col s3'><a href='#investimento"+i.getId()+"'>");
+										out.print("<b>"+i.getCodigoAtivo() +"</b> - " +i.getNomeAtivo());
+										out.print("</a></li>");
+									}
+								%>
+						</ul>
+					</div>
+					<%
+							for(Investimento i : lista) {
+								out.print("<div class='col s12' id='investimento"+i.getId()+"'>");
+								out.print(i.getValor_corrente());
+								out.print("</div>");
+							}
+						%>
+				</div>
+			</div>
+		</div>
+		</div>
+	</main>
+    
+    <%@ include file="rodape.html" %>
 </body>
 <% } %>
 </html>
