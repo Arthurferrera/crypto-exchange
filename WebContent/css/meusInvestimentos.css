@@ -37,3 +37,24 @@ main {
 li .active {
 	border-bottom: 2px solid #006c7c;
 }
+
+.indicator {
+	display: none;
+}
+
+.label-investimento {
+	color: #007e92;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.box-details {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    background-color: #ecf3ff;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px #01879c63;
+}
+}
