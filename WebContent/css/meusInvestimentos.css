@@ -53,7 +53,7 @@ li .active {
     margin: auto;
     padding: 5px;
     background-color: #ecf3ff;
-    border: 1px solid;
+    border: 1px solid #007e92;
     border-radius: 10px;
     box-shadow: 0px 3px 5px #01879c63;
 }

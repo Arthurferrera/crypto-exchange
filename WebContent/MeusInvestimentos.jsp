@@ -39,40 +39,6 @@
 	<link rel="icon" type="image/png" href="./imagens/logo-pim.png">
 	</head>
 <body>
-	<%-- <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-investimentos">
-	  <div class="container">
-	  	<img alt="logo" width="65" height="65" src="imagens/logo-pim.png">
-	    <a class="navbar-brand" style="float: none; margin-left: 20px;" href="#">Meus Investimentos</a>
-	  </div>
-	</nav>
-	
-    <div class="container">
-	    <div class="row">
-	    	<div class="col-md-4">
-				<div class="list-group" id="myList" role="tablist">
-					<%
-						for(Investimento i : lista){
-							out.print("<a class='list-group-item list-group-item-action' data-toggle='list' href='#investimento"+i.getId()+"' role='tab'>");
-							out.print("<b>"+i.getCodigoAtivo() +"</b> - " +i.getNomeAtivo());
-							out.print("</a>");
-						}
-					%>
-				</div>
-	    	</div>
-
-			<div class="col-md-8">
-				<div class="tab-content">
-					<%
-						for(Investimento i : lista) {
-							out.print("<div class='tab-pane' id='investimento"+i.getId()+"' role='tabpanel'>");
-							out.print(i.getValor_corrente());
-							out.print("</div>");
-						}
-					%>
-				</div>
-			</div>
-		</div>
-    </div> --%>
     <%@include file="sidenav.jsp" %>
 	<main>
 		<div class="content-exchanges">
