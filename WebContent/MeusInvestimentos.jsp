@@ -124,10 +124,45 @@
 					</div> -->
 					<%
 							for(Investimento i : lista) {
-								include page="rodape.html";
-							/* 	out.print("<div class='col s8' id='investimento"+i.getId()+"'>");
-								out.print(i.getValor_corrente());
-								out.print("</div>"); */
+								String resgate = "Não";
+								if(i.getResgatado() == 1){
+									resgate = "Sim";
+								}
+								
+								String item = "<div class='col s8' id='investimento"+i.getId()+"'>"+
+								"<div class='row box-details'>"+
+										"<div class='col s6 center'>"+
+										"	<h6 class='label-investimento'>Código do Ativo</h6>"+
+										"	<p>"+i.getCodigoAtivo()+"</p>"+
+										"</div> "+
+										"<div class='col s6 center'>"+
+											"<h6 class='label-investimento'>Nome do Ativo</h6>"+
+											"<p>"+i.getNomeAtivo()+"</p>"+
+										"</div> "+
+										"<div class='col s6 center'>"+
+											"<h6 class='label-investimento'>Data do primeiro investimento</h6>"+
+											"<p>"+i.getData_criacao()+"</p>"+
+										"</div> "+
+										"<div class='col s6 center'>"+
+											"<h6 class='label-investimento'>Data do último investimento</h6>"+
+											"<p>"+i.getData_atualizacao()+"</p>"+
+										"</div> "+
+										"<div class='col s4 center'>"+
+											"<h6 class='label-investimento'>Resgatado</h6>"+
+											"<p>"+resgate+"</p>"+
+										"</div> "+
+										"<div class='col s4 center'>"+
+											"<h6 class='label-investimento'>Qtd. Posições</h6>"+
+											"<p>"+i.getQuantidade()+" un.</p>"+
+										"</div> "+
+										"<div class='col s4 center'>"+
+											"<h6 class='label-investimento'>Valor Corrente</h6>"+
+											"<p>R$ "+i.getValor_corrente()+",00</p>"+
+										"</div> "+
+									"</div> "+
+								"</div>";
+								
+								out.print(item);
 							}
 						%>
 				</div>
