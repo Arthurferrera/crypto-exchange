@@ -84,7 +84,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="content-exchanges">
+		<%-- <div class="content-exchanges">
 			<h4>Meus investimentos</h4>
 			<div class="my-exchanges">
 				<div class="row">
@@ -108,7 +108,7 @@
 					%>
 				</div>
 			</div>
-		</div>
+		</div> --%>
 		
 	</main>
 	<%@ include file="rodape.html"%>

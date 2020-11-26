@@ -90,7 +90,7 @@
 								%>
 						</ul>
 					</div>
-					<div class='col s8' id='1'>
+					<!-- <div class='col s8' id='1'>
 						<div class="row box-details">
 							<div class="col s6 center">
 								<h6 class="label-investimento">Código do Ativo</h6>
@@ -121,14 +121,15 @@
 								<p>R$ 7,00</p>
 							</div>
 						</div>		
-					</div>
-					<%-- <%
+					</div> -->
+					<%
 							for(Investimento i : lista) {
-								out.print("<div class='col s8' id='investimento"+i.getId()+"'>");
+								include page="rodape.html";
+							/* 	out.print("<div class='col s8' id='investimento"+i.getId()+"'>");
 								out.print(i.getValor_corrente());
-								out.print("</div>");
+								out.print("</div>"); */
 							}
-						%> --%>
+						%>
 				</div>
 			</div>
 		</div>
