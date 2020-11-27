@@ -74,7 +74,7 @@
 				<div class="col-md-8 col-md-offset-2 item-extrato">
 					<div class="row row-title">
 						<div class="col-md-6">
-							<strong>Data do registro</strong>
+							<strong>Data e Hora da transação</strong>
 						</div>
 						<div class="col-md-6">
 							<strong>Valor (R$)</strong>

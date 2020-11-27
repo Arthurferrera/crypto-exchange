@@ -68,11 +68,11 @@ public class InvestimentoDAO {
 		Connection con = ConnectionFactory.getConnection();
 		
 		String sql = "SELECT e.id, 0 as resgatado, e.valor, "
-				+ "FORMAT (e.data_criacao, 'dd/MM/yy') as data_criacao "
+				+ "FORMAT (e.data_criacao, 'dd/MM/yyyy - H:m') as data_criacao "
 				+ "FROM entradas as e "
 				+ "WHERE e.cliente_id = ?";
 		String sqlResgate = "SELECT r.id, 1 as resgatado, r.valor, "
-				+ "FORMAT (r.data_criacao, 'dd/MM/yy') as data_criacao "
+				+ "FORMAT (r.data_criacao, 'dd/MM/yyyy - H:m') as data_criacao "
 				+ "FROM resgates as r "
 				+ "WHERE r.cliente_id = ?";
 		

@@ -20,5 +20,6 @@
 	<li><a href="Home.jsp">Home</a></li>
 	<li><a href="MeusInvestimentos.jsp">Meus Investimentos</a></li>
 	<li><a href="FluxoCaixa.jsp">Fluxo de Caixa</a></li>
+	<li><a href="Deslogar.jsp" style="color: #007e92">Sair</a></li>
 </ul>
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
