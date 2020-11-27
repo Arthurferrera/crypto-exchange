@@ -3,8 +3,6 @@ package br.unip.models;
 public class Extrato {
 
 	private int id;
-	private String nomeAtivo;
-	private String codigoAtivo;
 	private int valor;
 	private int resgatado;
 	private String data_criacao;
@@ -14,18 +12,6 @@ public class Extrato {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getNomeAtivo() {
-		return nomeAtivo;
-	}
-	public void setNomeAtivo(String nomeAtivo) {
-		this.nomeAtivo = nomeAtivo;
-	}
-	public String getCodigoAtivo() {
-		return codigoAtivo;
-	}
-	public void setCodigoAtivo(String codigoAtivo) {
-		this.codigoAtivo = codigoAtivo;
 	}
 	public int getValor() {
 		return valor;

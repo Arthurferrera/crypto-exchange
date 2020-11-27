@@ -15,7 +15,7 @@
 		
 		ArrayList<Extrato> lista = new ArrayList<>();
 		InvestimentoDAO contatoDao = new InvestimentoDAO();
-		/* lista = contatoDao.getExtrato(usuario.getId()); */
+		lista = contatoDao.getExtrato(usuario.getId());
 		
 		
 %>
@@ -50,6 +50,9 @@
 			</div>
 			
 			<div class="row center">
+				<!-- <div class="col-md-4 col-md-offset-1">
+					<h6>Aportes</h6>
+				</div> -->
 				<style>
 					.row-title {
 						font-size: 16px;
@@ -61,8 +64,13 @@
 						background-color: #FFF;
 						border: 1px solid #007e92;
 					}
+					.resgate {
+						color: #bf1900;
+					}
+					.aporte {
+						color: #00ba03;
+					}
 				</style>
-				<!-- <div class="col s2"></div> -->
 				<div class="col-md-8 col-md-offset-2 item-extrato">
 					<div class="row row-title">
 						<div class="col-md-6">
@@ -72,7 +80,29 @@
 							<strong>Valor (R$)</strong>
 						</div>
 					</div>
-					<div class="row">
+					<%
+							for(Extrato e : lista) {
+								String classe = "resgate";
+								String sinal = "";
+								if(e.getResgatado() == 0) {
+									classe = "aporte";
+								} else {
+									sinal = "-";
+								}
+								String item = "<div class='row'>"+
+												"<div class='col-md-6'>"+
+													e.getData_criacao()+""+
+												"</div>"+
+												"<div class='col-md-6 "+classe+"'>"+
+													sinal + " R$ " +e.getValor()+ "" +
+												"</div>"+
+											"</div>";
+								out.print(item);
+							}
+					%>
+							
+					
+<!-- 					<div class="row">
 						<div class="col-md-6">
 							11/11/2012
 						</div>
@@ -95,15 +125,7 @@
 						<div class="col-md-6">
 							R$ 3.000,00
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							11/11/2012
-						</div>
-						<div class="col-md-6">
-							R$ 3.000,00
-						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
