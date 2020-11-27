@@ -50,9 +50,6 @@
 			</div>
 			
 			<div class="row center">
-				<!-- <div class="col-md-4 col-md-offset-1">
-					<h6>Aportes</h6>
-				</div> -->
 				<style>
 					.row-title {
 						font-size: 16px;
@@ -100,32 +97,6 @@
 								out.print(item);
 							}
 					%>
-							
-					
-<!-- 					<div class="row">
-						<div class="col-md-6">
-							11/11/2012
-						</div>
-						<div class="col-md-6">
-							R$ 3.000,00
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							11/11/2012
-						</div>
-						<div class="col-md-6">
-							R$ 3.000,00
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							11/11/2012
-						</div>
-						<div class="col-md-6">
-							R$ 3.000,00
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>

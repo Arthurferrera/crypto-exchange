@@ -84,31 +84,6 @@
 				</div>
 			</div>
 		</div>
-		<%-- <div class="content-exchanges">
-			<h4>Meus investimentos</h4>
-			<div class="my-exchanges">
-				<div class="row">
-					<div class="col s12">
-						<ul class="tabs">
-							<%
-								for (Investimento i : lista) {
-								out.print("<li class='tab col s3'><a href='#investimento" + i.getId() + "'>");
-								out.print("<b>" + i.getCodigoAtivo() + "</b> - " + i.getNomeAtivo());
-								out.print("</a></li>");
-							}
-							%>
-						</ul>
-					</div>
-					<%
-						for (Investimento i : lista) {
-						out.print("<div class='col s12' id='investimento" + i.getId() + "'>");
-						out.print(i.getValor_corrente());
-						out.print("</div>");
-					}
-					%>
-				</div>
-			</div>
-		</div> --%>
 		
 	</main>
 	<%@ include file="rodape.html"%>
