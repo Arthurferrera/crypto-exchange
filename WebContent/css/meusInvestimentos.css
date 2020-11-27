@@ -52,9 +52,9 @@ li .active {
     width: 90%;
     margin: auto;
     padding: 5px;
-    background-color: #ecf3ff;
+    background-color: #FFF;
     border: 1px solid #007e92;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0px 3px 5px #01879c63;
 }
 }
