@@ -33,11 +33,7 @@ Durante o desenvolvimento desse projeto utilizamos as seguintes tecnologias e pa
 
 ## :computer: Web
 
-Abaixo está um exemplo da home da aplicação web, onde mostra as telas do sistema, edição de dados do perfil, extrato e listagem de ativos de um cliente
-
-<h1 align="center">
-    <img alt="Web" src="readme-assets/web.png" width="900px">
-</h1>
+Logo acima o video [apresentacao-web.mp4] está uma demostração da aplicação web, onde mostra as telas do sistema, edição de dados do perfil, extrato e listagem de ativos de um cliente, tudo em funcionamento integrado com banco de dados SQL Server.
 
 <a id="como-usar"></a>
 
