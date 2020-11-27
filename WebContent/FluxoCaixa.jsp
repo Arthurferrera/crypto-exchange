@@ -1,3 +1,4 @@
+<%@page import="br.unip.models.Extrato"%>
 <%@page import="br.unip.models.Investimento"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.unip.dao.InvestimentoDAO"%>
@@ -12,9 +13,9 @@
 		response.sendRedirect("Login.jsp");
 	} else {
 		
-		ArrayList<Investimento> lista = new ArrayList<>();
+		ArrayList<Extrato> lista = new ArrayList<>();
 		InvestimentoDAO contatoDao = new InvestimentoDAO();
-		lista = contatoDao.listaInvestimentos(usuario.getId());
+		/* lista = contatoDao.getExtrato(usuario.getId()); */
 		
 		
 %>
@@ -50,6 +51,12 @@
 			
 			<div class="row center">
 				<style>
+					.row-title {
+						font-size: 16px;
+						font-weight: 900;
+						border-bottom: 1px solid #007e92;
+						padding: 10px;
+					}
 					.item-extrato {
 						background-color: #FFF;
 						border: 1px solid #007e92;
@@ -57,31 +64,43 @@
 				</style>
 				<!-- <div class="col s2"></div> -->
 				<div class="col-md-8 col-md-offset-2 item-extrato">
-					<div class="row">
-						<div class="col s3">
-							<strong>Data</strong>
+					<div class="row row-title">
+						<div class="col-md-6">
+							<strong>Data do registro</strong>
 						</div>
-						<div class="col s2">
-							<strong>Código</strong>
-						</div>
-						<div class="col s3">
-							<strong>Nome</strong>
-						</div>
-						<div class="col s3">
+						<div class="col-md-6">
 							<strong>Valor (R$)</strong>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col s3">
+						<div class="col-md-6">
 							11/11/2012
 						</div>
-						<div class="col s2">
-							LTC
+						<div class="col-md-6">
+							R$ 3.000,00
 						</div>
-						<div class="col s3">
-							Litcoin
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							11/11/2012
 						</div>
-						<div class="col s3">
+						<div class="col-md-6">
+							R$ 3.000,00
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							11/11/2012
+						</div>
+						<div class="col-md-6">
+							R$ 3.000,00
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							11/11/2012
+						</div>
+						<div class="col-md-6">
 							R$ 3.000,00
 						</div>
 					</div>
