@@ -13,12 +13,13 @@
 ## :bookmark: Sobre
 
 Este é um trabalho de conclusão de semestre da faculdade UNIP, campus Alphaville, projeto voltado para uma plataforma de gerenciamento de cripto ativos, 
-relatórios de investimentos feitos pelos seus clientes
-O <strong>Ecoleta</strong> é uma aplicação Web e Mobile para com o foco em ajudar as pessoas a encontrarem pontos de coleta para reciclagem de resíduos específicos. 
-<br />
+relatórios de investimentos feitos pelos seus clientes.
+
 **Exemplo:** Bitcoin, Ethereum, Tether...
 
-Essa aplicação foi desenvolvida durante a <strong>Next Level Week</strong> organizada e realizada  pela [Rocketseat](https://rocketseat.com.br/).
+<br />
+
+Essa aplicação foi desenvolvida durante o último semestre do curso de Análise e Desenvolvimento de Sistemas na faculdade <strong>UNIP</strong> organizado e acompanhado pelo professor *José Cassiano*
 
 <a id="tecnologias-utilizadas"></a>
 
