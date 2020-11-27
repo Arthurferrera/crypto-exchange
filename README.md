@@ -34,7 +34,7 @@ Durante o desenvolvimento desse projeto utilizamos as seguintes tecnologias e pa
 
 ## :computer: Web
 
-Logo acima o video [apresentacao-web.mp4] está uma demostração da aplicação web, onde mostra as telas do sistema, edição de dados do perfil, extrato e listagem de ativos de um cliente, tudo em funcionamento integrado com banco de dados SQL Server.
+Logo acima o video [apresentacao-web.mp4] (é possível baixa-lo clicando nele e depois em 'view raw') está uma demostração da aplicação web, onde mostra as telas do sistema, edição de dados do perfil, extrato e listagem de ativos de um cliente, tudo em funcionamento integrado com banco de dados SQL Server.
 
 <a id="como-usar"></a>
 
